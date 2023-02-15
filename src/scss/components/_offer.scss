@@ -1,0 +1,115 @@
+.offer {
+  position: relative;
+  padding: rem(70) 0;
+  background-color: var(--color-grey-200);
+
+  &__inner {
+    @include flex-all-sb;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 450px;
+
+    p {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.offer-slider {
+  overflow: hidden;
+
+  &__item {
+    position: relative;
+    isolation: isolate;
+  }
+
+  &__box {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      background-image: url("../img/offer/triangle.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 62%;
+      opacity: 0;
+      transition: opacity 50ms ease-in;
+    }
+  }
+
+  &__content {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 57px;
+    bottom: 27px;
+    opacity: 0;
+     transition: opacity 50ms ease-in;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      background-image: url("../img/sprite.svg#bodybilder");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 25px;
+      height: 29px;
+    }
+
+    &--karate {
+      &::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        background-image: url("../img/sprite.svg#karate");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 25px;
+        height: 29px;
+      }
+    }
+  }
+
+  span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-grey-300);
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../img/sprite.svg#clock");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 5px;
+      left: -25px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.swiper-slide-active {
+
+  .offer-slider__content {
+    opacity: 1;
+  }
+
+  .offer-slider__box::before {
+    opacity: 1;
+  }
+}

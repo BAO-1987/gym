@@ -1,0 +1,8 @@
+.choose {
+  position: relative;
+  isolation: isolate;
+
+  &__inner {
+    @include flex-sb;
+  }
+}

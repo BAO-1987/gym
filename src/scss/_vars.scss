@@ -1,0 +1,22 @@
+:root {
+  // base
+  --font-family: "Open Sans", sans-serif;
+  --font-title: "Audiowide", cursive;
+  --content-width: 1110px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --color-white: hsla(0, 0%, 100%, 1);
+  --color-grey: hsla(0, 0%, 80%, 1);
+  --color-grey-100: hsla(0, 0%, 85%, 1);
+  --color-grey-200: hsla(0, 0%, 97%, 1);
+  --color-grey-300: hsla(0, 0%, 62%, 1);
+  --color-red: hsla(0, 84%, 37%, 1);
+  --color-ebony: hsla(0, 0%, 28%, 1);
+  --color-black: hsla(0, 0%, 0%, 1);
+  --color-blue: hsla(191, 78%, 47%, 1);
+  --color-orange: hsla(32, 75%, 55%, 1);
+  --color-purpler: hsla(267, 33%, 71%, 1);
+  --color-pink: hsla(11, 100%, 90%, 1);
+}

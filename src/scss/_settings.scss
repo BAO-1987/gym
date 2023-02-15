@@ -1,0 +1,224 @@
+.page {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-grey);
+  background-color: var(--color-white);
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100%;
+  }
+}
+
+.site-container {
+  @include footerToBottom;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: em(6) em(28);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 2.1;
+  text-transform: uppercase;
+  // max-width: fit-content;
+  color: var(--color-white);
+  background-color: var(--color-red);
+  transition-property: color, background-color, border;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+
+
+  &:focus {
+    outline: 2px solid var(--color-active);
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    background-color: var(--color-orange-100);
+  }
+
+  &:active {
+    background-color: var(--color-active);
+  }
+
+  &--small {
+     padding: em(6) em(25);
+     color: var(--color-red);
+     background-color: var(--color-white);
+     border: 1px solid var(--color-red);
+
+     &:hover {
+      color: var(--color-white);
+       background-color: var(--color-red);
+     }
+  }
+
+  // &--second {
+  //   padding: 20px 72px 20px 30px;
+  //   background-color: var(--color-white);
+  //   color: var(--color-ebony);
+  //   border: 1px solid var(--color-ebony);
+
+  //   &::before {
+  //     content: "";
+  //     right: 24px;
+  //     background-color: var(--color-ebony);
+  //   }
+  // }
+
+  // &--inverse {
+  //   border: 1px solid var(--color-white);
+  //   background-color: transparent;
+  // }
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.slider-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-red);
+  width: 65px;
+  height: 50px;
+  background-color: var(--color-white);
+  transition-property: color, background-color border;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+
+  &::before {
+    content: "";
+    position: absolute;
+    mask-image: url("../img/sprite.svg#arrow");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    width: 35px;
+    height: 30px;
+    background-color: var(--color-red);
+
+    // @include for-width(-mobile-l) {
+    //   width: 20px;
+    //   height: 20px;
+    // }
+  }
+
+  &--reverse {
+    right: -30px;
+
+    &::before {
+      transform: rotate(180deg);
+
+      // @include for-width(-mobile-l) {
+      //   width: 20px;
+      //   height: 20px;
+      // }
+    }
+
+    // @include for-width(-mobile-l) {
+    //   right: 30px;
+    // }
+  }
+
+  &:hover {
+    background-color: var(--color-red);
+
+    &:before {
+      background-color: var(--color-white);
+    }
+  }
+
+  // @include for-width(-mobile-l) {
+  //   width: 20px;
+  //   height: 20px;
+  // }
+}
+
+.slider-btn.swiper-button-disabled {
+  pointer-events: none;
+
+  &:before {
+    background-color: var(--color-ebony);
+  }
+
+  border: 1px solid var(--color-ebony);
+
+}
+
+.title {
+  @include h2;
+}
+
+section {
+  margin-bottom: rem(150);
+}
+
+.slogan {
+  @include flex-all-center;
+
+  mask-image: url("../img/sprite.svg#slogan-bg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  margin-bottom: 20px;
+  width: 221px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 3.5;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: var(--color-red);
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.input-reset {
+  border-color: transparent;
+  padding: 15px 30px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  background-color: transparent;
+
+  &::placeholder {
+    color: var(--color-gray);
+  }
+}
